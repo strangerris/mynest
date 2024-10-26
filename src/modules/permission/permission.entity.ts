@@ -1,11 +1,3 @@
-/**********************************
- * @Author: Ronnie Zhang
- * @LastEditor: Ronnie Zhang
- * @LastEditTime: 2023/12/07 20:26:30
- * @Email: zclzone@outlook.com
- * Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- **********************************/
-
 import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Role } from '@/modules/role/role.entity';
 import { MethodType, PermissionType } from '@/types';
@@ -73,5 +65,6 @@ export class Permission {
   @ManyToMany(() => Role, (role) => role.permissions, {
     createForeignKeyConstraints: false,
   })
+
   roles: Role[];
 }
